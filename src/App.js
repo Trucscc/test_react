@@ -1,27 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { increaseCounter, decreaseCounter } from './redux/action/counterAction';
-import MyComponent from './components/Mycomponent';
+import { Outlet } from 'react-router-dom';
+import './App.scss';
+import Header from './components/Header/Header';
 
-const App = () => {
-  const count = useSelector(state => state.counter.count);
-  const dispatch = useDispatch();
 
+const App = ()=>{
+  //console.log("prevalue");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World &amp; Hoi Dan IT.
-          <MyComponent/>
-        </p>
-        <div>Count = {count}</div>
-        <button onClick={() => dispatch(increaseCounter())}>Increase</button>
-        <button onClick={() => dispatch(decreaseCounter())}>Decrease</button>
-      </header>
-    </div>
-  );
+      <div className="app-container">
+          <div className='header-container'>
+              <Header />
+          </div>
+          <div className='main-container'>
+            <div className='sidenav-container'>
+              {/* <buttom className='btn btn-primary'>Test</buttom> */}
+            </div>
+            <div className='sidenav-container'>
+              <Outlet />
+            </div>
+          </div>
+
+      </div>
+  )
 }
 
-export default App;
+export default App ;
