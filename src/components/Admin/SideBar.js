@@ -4,6 +4,10 @@ import { Sidebar, Menu, MenuItem, SubMenu   } from 'react-pro-sidebar';
 
 import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
 import sidebarBg from '../../assets/images/bg2.jpg';
+//import { DiReact } from 'react-icons/di';
+import { FcHome } from "react-icons/fc";
+import {MdDashboard} from "react-icons/md"
+
 
 export const SideBar = (props) => {
     const { collapsed, toggled, handleToggleSidebar} = props;
@@ -29,33 +33,29 @@ export const SideBar = (props) => {
                             whiteSpace: 'nowrap',
                         }}
                     >
-                      Auto_Control_App
+                        <FcHome size={'2em'} color={'00bfff'}/>
+                      <span> Auto_Control_App</span>
                     </div>
                 </Menu>
 
                 <Menu>
-                    <MenuItem
-                        icon={<FaTachometerAlt />}
-                        suffix={<span className="badge red">New</span>}
-                    >
-                        Dashboard
+                    <MenuItem icon={<MdDashboard />} >
+                         Dashboard   {<FaRegLaughWink />} 
                     </MenuItem>
 
-                    <MenuItem icon={<FaGem />}> components</MenuItem>
-                    
+                    <MenuItem icon={<FaTachometerAlt />}> components</MenuItem>
+
                     <SubMenu
-                        suffix={<span className="badge yellow">3</span>}
-                        icon={<FaRegLaughWink />}
+                        icon={<FaList />}
+                        title = "withPrefix"
                     >
-                        <MenuItem>1</MenuItem>
-                        <MenuItem>2</MenuItem>
-                        <MenuItem>3</MenuItem>
+                        <MenuItem>Quản lý Users</MenuItem>
+                        <MenuItem>Quản lý ID_Board </MenuItem>
+                        <MenuItem>Quản lý Timer</MenuItem>
                     </SubMenu>
 
                     <SubMenu
-                        prefix={<span className="badge gray">3</span>}
-                        title='withPrefix'
-                        icon={<FaHeart />}
+                         icon={<FaHeart/>} 
                     >
                         <MenuItem>1</MenuItem>
                         <MenuItem>2</MenuItem>
