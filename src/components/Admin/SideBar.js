@@ -7,7 +7,7 @@ import sidebarBg from '../../assets/images/bg2.jpg';
 //import { DiReact } from 'react-icons/di';
 import { FcHome } from "react-icons/fc";
 import {MdDashboard} from "react-icons/md"
-
+import { Link } from 'react-router-dom';
 
 export const SideBar = (props) => {
     const { collapsed, toggled, handleToggleSidebar} = props;
@@ -39,7 +39,7 @@ export const SideBar = (props) => {
                 </Menu>
 
                 <Menu>
-                    <MenuItem icon={<MdDashboard />} >
+                    <MenuItem icon={<MdDashboard />} component={<Link to="/admins/" />}>
                          Dashboard   {<FaRegLaughWink />} 
                     </MenuItem>
 
@@ -49,7 +49,10 @@ export const SideBar = (props) => {
                         icon={<FaList />}
                         title = "withPrefix"
                     >
-                        <MenuItem>Quản lý Users</MenuItem>
+                        <MenuItem component={<Link to="/admins/manager-users" />}>
+                            Quản lý Users
+                            {/* <NavLink to="/admins/manager-users" className="nav-link" /> */}
+                        </MenuItem>
                         <MenuItem>Quản lý ID_Board </MenuItem>
                         <MenuItem>Quản lý Timer</MenuItem>
                     </SubMenu>

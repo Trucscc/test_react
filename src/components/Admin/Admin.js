@@ -19,8 +19,8 @@ const Admin = (props) => {
                 <div className="admin-main">
                     <Outlet />
                 </div>
-                
             </div>
+            
         </div>
     )
 }
