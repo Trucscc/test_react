@@ -1,18 +1,20 @@
-import SideBar from "./SideBar"
-import './Admin.scss'
+import {SideBar} from "./SideBar";
+import './Admin.scss';
+import { FaBars, FaHeart } from "react-icons/fa";
 //import { useState } from "react"
 import { Outlet } from 'react-router-dom';
+import { useState } from "react";
 
 const Admin = (props) => {
-    //const [collapsed, setCollaped]=useState(false)
+    const [collapsed, setCollaped] = useState(false);
     return (
         <div className="admin-container">
             <div className="admin-sidebar">
-                <SideBar />
+                <SideBar collapsed={collapsed}/>
             </div>
             <div className="admin-content">
                 <div className="admin-header">
-                    {/* <FaBars /> */}
+                    <FaBars onClick={()=>setCollaped(!collapsed)}/>
                 </div>
                 <div className="admin-main">
                     <Outlet />
