@@ -46,22 +46,63 @@ body {
     }
     .navbar{
       z-index:10;
-      // opacity: 0.2;
-      background-color: rgba(0,0,0, 0);
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.5);
       .nav-link{
          &.active {
-            color: red;
+            color: #00bfff;
          }
       }
     }
 
-
     // .navbar-nav .nav-link.active {
     //       color: rgb(86, 15, 250);
     // }
+  }
+  .homepage-container{
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    width: 33%;
+    text-align: center;
+    padding: 60px 10px;                                                                           
+    margin: 2px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 
+
+    .title-1{
+      font-size: 30px;
+      font-weight: 600;
+    }
+    .title-2{
+      font-size: 25px;
+    }
+
+    .btn-signup {
+        height: 35px;
+        border-radius: 5px;
+        margin-right: 15px;
+        padding: 0 15px;
+        background-color: #535353;
+        color: white;
+        &:hover{
+          background: black;
+        }
+    }
 
   }
 
+  video{
+    position: fixed;
+    bottom: 0;
+
+    width: 60vw;
+  }
+
 }
+
+
 

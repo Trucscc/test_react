@@ -11,14 +11,14 @@ const postCreateNewUser =(email, password, username, role, userImage ) =>{
 }
 
 const postLogin =(setEmail, setPassword) =>{
-    return instance.post(`/login`, {
+    return instance.post(`/`, {
         email: setEmail,
         password: setPassword
     });
 }
 
 const postLogin1 =(email, password) =>{
-    return instance.post(`/login`, 
+    return instance.post(`/`, 
           {email, password}
     );
 }

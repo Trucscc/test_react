@@ -3,7 +3,7 @@ import './Admin.scss'
 //import { useState } from "react"
 import { Outlet } from 'react-router-dom';
 
-export const Admin = (props) => {
+const Admin = (props) => {
     //const [collapsed, setCollaped]=useState(false)
     return (
         <div className="admin-container">
@@ -22,3 +22,4 @@ export const Admin = (props) => {
         </div>
     )
 }
+export default Admin;

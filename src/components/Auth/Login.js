@@ -5,7 +5,7 @@ import { postLogin } from '../../services/apiService';
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] =useState("");
+    const [password, setPassword] = useState("");
     const navigate= useNavigate();
     const handleLogin = async() =>{
         // Validate
@@ -13,7 +13,7 @@ const Login = (props) => {
         // Submit into API
         let res = await postLogin(email, password);
         console.log('>>> check res: ', res);
-        //navigate('/');
+        navigate('/');
     }
     const handleChangePass = ()=>{
        alert('me');

@@ -1,9 +1,9 @@
 
-export const User = (props) => {
+const User = (props) => {
     return (
         <div>
-            user component
+            User component
         </div>
     )
 }
-//default User;
+export default User;

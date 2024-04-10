@@ -1,4 +1,4 @@
-import { Alert, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -12,11 +12,12 @@ const Header = () =>{
   const handleLogin =() =>{
     navigate('/login');
   }
+  
   return (
-    <Navbar expand="lg" bg="bg-body-tertiary">
+    <Navbar className="bg-body-tertiary" expand="lg" >
       <Container>
         {/* <Navbar.Brand href="#home">TH-Logo</Navbar.Brand> */}
-        <NavLink to="/" className="navbar-brand">TH-Logo</NavLink>
+        <NavLink to="/" className="navbar-brand">AuC</NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -37,9 +38,9 @@ const Header = () =>{
             {/* <button className='btn-login'>Log_In</button>
             <button className='btn-signup'>Sign_Up</button> */}
             <Button className='btn-login'onClick={()=> handleLogin()}>Log_In</Button>
-            <Button className= 'btn-signup'>Sign_Up</Button>
+            {/* <Button className= 'btn-signup'>Sign_Up</Button> */}
             <NavDropdown title="Setting" id="basic-nav-dropdown">
-              <NavDropdown.Item>Log_In</NavDropdown.Item>
+              <NavDropdown.Item onClick={()=> handleLogin()}>Log_In</NavDropdown.Item>
               <NavDropdown.Item>Sign_Up</NavDropdown.Item>
               <NavDropdown.Item>About</NavDropdown.Item>
               <NavDropdown.Divider />

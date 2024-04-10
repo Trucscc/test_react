@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import './App.scss';
 import Header from './components/Header/Header';
+import { ManageUser } from './components/Content/ManageUser';
 
 
 const App = ()=>{
@@ -10,14 +11,14 @@ const App = ()=>{
           <div className='header-container'>
               <Header />
           </div>
-          <div className='main-container'>
+          <Outlet />
+          {/* <div className='main-container'>
+            <ManageUser />
             <div className='sidenav-container'>
-              {/* <buttom className='btn btn-primary'>Test</buttom> */}
+              
             </div>
-            <div className='sidenav-container'>
-              <Outlet />
-            </div>
-          </div>
+            
+          </div> */}
 
       </div>
   )
