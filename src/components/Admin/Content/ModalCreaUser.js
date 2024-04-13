@@ -4,8 +4,8 @@ import Modal from 'react-bootstrap/Modal';
 
 import avata from '../../../assets/canh1.jpg';
 import { FcPlus } from "react-icons/fc";
-import axios from 'axios';
 import { toast } from 'react-toastify';
+import {postCreateNewUser} from '../../../services/apiService'
 
 
 export const ModalCreateUser =(props)=>{
@@ -35,7 +35,7 @@ export const ModalCreateUser =(props)=>{
     }else{
       setPreviewImage(avata);
     }
-    console.log('upload file', event.target.file);
+    //console.log('upload file', event.target.file);
     
   }
 
@@ -63,21 +63,14 @@ export const ModalCreateUser =(props)=>{
         return;
       }
       
-      // call apis
-      const data = new FormData();
-       data.append('email', email);
-       data.append('password', password);
-       data.append('username', username);
-       data.append('role', role);
-       data.append('userImage', Image);
-        let res = await axios.post('http://localhost:8080/', data) ; // Truyền đường dẫn đã tạo bởi Docker và kiểm bởi Postman
+      let res = await postCreateNewUser(email, password, username, role);
        console.log('>>> checkout apis',res.data)                          // chạy ổn vào đây
         if(res.data && res.data.EC ===0){
           toast.success('data nhập thành công');
           handleClose();
         }
         if(res.data && res.data.EC !==0){
-          toast.error('data nhập thành công');
+          toast.error('data chưa lưu');
         }
       }
 
@@ -135,7 +128,7 @@ export const ModalCreateUser =(props)=>{
                 <div className='col-md-12 img-preview'>
                       {/* <img src={avata} />  */}
                     {previewImage ? 
-                        <img src='previewImage' alt=""/> 
+                        <img src={previewImage} alt=""/> 
                         :
                         <span>Preview Image</span>
                     }
