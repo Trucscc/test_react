@@ -1,9 +1,9 @@
 
-const User = (props) => {
+export const User = (props) => {
     return (
         <div>
             User component
         </div>
     )
 }
-export default User;
+//default User;

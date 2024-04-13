@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import  User  from './components/User/User';                  // Nhập component 'user' từ file 'User.js'trong thư mục Components
+import  {User}  from './components/User/User';                  // Nhập component 'user' từ file 'User.js'trong thư mục Components
 import Admin  from './components/Admin/Admin';
 import { HomePage } from './components/Home/HomePage';
 import { ManageUser } from './components/Admin/Content/ManageUser';

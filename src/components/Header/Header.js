@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-const Header = () =>{
+export const Header = () =>{
   const navigate = useNavigate();
 
   const handleLogin =() =>{
@@ -53,4 +53,4 @@ const Header = () =>{
   );
 }
 
-export default Header;
+//default Header;

@@ -11,7 +11,7 @@ const postCreateNewUser =(email, password, username, role, userImage ) =>{
 }
 
 const postLogin =(setEmail, setPassword) =>{
-    return instance.post(`/`, {
+    return instance.post(`/login`, {
         email: setEmail,
         password: setPassword
     });

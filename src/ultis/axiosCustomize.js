@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL : `https://controll-auto-default-rtdb.firebaseio.com`
+    baseURL : `http://localhost:8080/`
 
 });
 //Add a reuest interceptor
